@@ -501,33 +501,39 @@
     }
 
     /* Footer */
-footer {
-  background: #003366;
-  color: #fff;
-  text-align: center;
-  padding: 20px 0;
-  font-size: 0.9em;
-}
 
-footer i,
-footer svg {
-  color: #fff !important;  /* צבע לבן בוהק לאייקונים */
-  fill: #fff !important;   /* למקרה שמדובר ב-SVG */
-  opacity: 1 !important;   /* לוודא שקיפות מלאה */
-  filter: none !important; /* להסיר פילטרים שעלולים להחליש את הצבע */
-}
+  /* Footer המקורי שלך */
+  footer {
+    background: #003366;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+  }
 
-.footer-social a {
-  margin: 0 0.5em;
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  transition: transform 0.3s;
-}
+  /* כאן הוספנו את התיקון לאייקונים ב־<img> בפוטר */
+  .footer-social img {
+    filter: brightness(0) invert(1) !important;
+    max-width: 100%;
+  }
 
-.footer-social a:hover {
-  transform: scale(1.2);
-}
+  .footer-social a {
+    margin: 0 0.5em;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s;
+  }
+
+  .footer-social a:hover {
+    transform: scale(1.2);
+  }
+
+  footer p {
+    margin-top: 1em;
+    font-size: 0.9em;
+    color: #dcdde1;
+  }
     /* Back to Top Button */
     #backToTop {
       position: fixed;
