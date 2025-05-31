@@ -509,29 +509,25 @@ footer {
   font-size: 0.9em;
 }
 
-footer i, 
+footer i,
 footer svg {
-  color: #fff; /* ודא שהאייקונים בצבע לבן */
-  fill: #fff;
+  color: #fff !important;  /* צבע לבן בוהק לאייקונים */
+  fill: #fff !important;   /* למקרה שמדובר ב-SVG */
+  opacity: 1 !important;   /* לוודא שקיפות מלאה */
+  filter: none !important; /* להסיר פילטרים שעלולים להחליש את הצבע */
 }
-    
-    .footer-social a {
-      margin: 0 0.5em;
-      display: inline-block;
-      width: 24px;
-      height: 24px;
-      transition: transform 0.3s, opacity 0.3s;
-    }
-    .footer-social a:hover {
-      transform: scale(1.1);
-      opacity: 0.8;
-    }
-    footer p {
-      margin-top: 1em;
-      font-size: 0.9em;
-      color: #dcdde1;
-    }
 
+.footer-social a {
+  margin: 0 0.5em;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s;
+}
+
+.footer-social a:hover {
+  transform: scale(1.2);
+}
     /* Back to Top Button */
     #backToTop {
       position: fixed;
