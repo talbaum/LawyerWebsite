@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>עו"ד יניב אברהמוב | מתמחה בדיני נזיקין </title>
-  <link rel="icon" href="assets/images/logo.jpeg" type="image/png" />
+  <link rel="icon" href="assets/images/logo.jpeg" type="image/png">
   <!-- SEO Meta Tags -->
   <meta name="description" content="עו"ד יניב אברהמוב - מומחה בנזקי גוף ותאונות דרכים. ליווי משפטי אישי, מקצועי ודיסקרטי." />
   <meta property="og:title" content="עו"ד יניב אברהמוב | מתמחה בדיני נזיקין" />
@@ -31,7 +31,6 @@ body {
   line-height: 1.6;
 }
 
-/* קישורים */
 a {
   color: var(--color-accent);
   text-decoration: none;
@@ -42,7 +41,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/* ניווט */
 header.navbar {
   background-color: var(--color-secondary);
   border-bottom: 1px solid #e9ecef;
@@ -53,7 +51,6 @@ header.navbar {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  flex-wrap: wrap; /* הוספתי כדי להיות גמיש במובייל */
 }
 
 .navbar .logo {
@@ -62,7 +59,6 @@ header.navbar {
   color: var(--color-primary);
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .navbar ul {
@@ -71,7 +67,6 @@ header.navbar {
   gap: 1rem;
   margin: 0;
   padding: 0;
-  flex-wrap: wrap; /* הוספתי כדי להיות גמיש במובייל */
 }
 
 .navbar li a {
@@ -85,89 +80,72 @@ header.navbar {
   color: var(--color-secondary);
 }
 
-/* אזור ה־hero */
 .hero {
   background-color: var(--color-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4rem 1rem; /* הגדלתי את ה-padding */
-  flex-direction: column; /* שינו לעמוד אחד במובייל */
-  text-align: center;
+  padding: 4rem 1rem; /* הגדלתי את הpadding */
 }
 
-/* קונטיינר ההרוס */
 .hero .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 2rem; /* הגדלתי את ה-gap */
-  width: 100%;
+  gap: 2rem; /* הגדלתי את הgap */
 }
 
-/* תמונת פרופיל */
 .hero img.profile {
-  max-width: 600px; /* הגדלתי */
+  max-width: 600px; /* הגדלתי פי 1.5 */
   width: 100%;
   height: auto;
   border-radius: 50%;
-  border: 6px solid var(--color-primary);
+  border: 6px solid var(--color-primary); /* הגדלתי את הborder */
   margin-bottom: 1.5rem;
 }
 
-/* כותרת ההרוס */
 .hero h1 {
-  font-size: 2.5rem; /* הגדלתי */
+  font-size: 2.5rem; /* הגדלתי את הגופן */
   color: var(--color-primary);
 }
 
-/* הפסקה */
 .hero p {
   max-width: 700px;
-  width: 100%;
-  margin: 0 auto;
   color: var(--color-muted);
-  font-size: 1.1rem; /* קצת יותר גדול */
+  font-size: 1.1rem; /* הגדלתי קצת את הגופן */
 }
 
-/* כפתור */
 .hero .btn-primary {
-  padding: 1rem 2rem; /* יותר גדול */
+  padding: 1rem 2rem; /* הגדלתי את הכפתור */
   background-color: var(--color-primary);
   color: var(--color-secondary);
   border: none;
   border-radius: 6px;
   cursor: pointer;
   font-size: 1.1rem;
-  display: inline-block;
-  margin-top: 1.5rem;
 }
 
 .hero .btn-primary:hover {
   background-color: var(--color-accent);
 }
 
-/* לוגו במובייל */
 .hero-logo {
-  max-width: 250px; /* הגדלתי מ-150 ל-250 */
+  max-width: 250px; /* הגדלתי מ-150px ל-250px */
   width: 100%;
   height: auto;
+  margin: 1.5rem auto;
+  display: block;
 }
 
-/* מחלקות סקשן */
 .section {
   padding: 3rem 1rem;
-  width: 100%;
-  box-sizing: border-box;
 }
 
-/* סקשן אלט */
 .section.alt {
   background-color: var(--color-bg-section);
 }
 
-/* כותרות בסקשן */
 .section h2 {
   font-size: 1.75rem;
   color: var(--color-primary);
@@ -175,7 +153,6 @@ header.navbar {
   margin-bottom: 1rem;
 }
 
-/* תיאור */
 .section p.description {
   max-width: 800px;
   margin: 0 auto 2rem;
@@ -183,7 +160,6 @@ header.navbar {
   text-align: center;
 }
 
-/* קטגוריות תרגילים */
 .practices {
   display: flex;
   flex-wrap: wrap;
@@ -191,7 +167,6 @@ header.navbar {
   gap: 2rem;
 }
 
-/* כרטיסי תרגילים */
 .practice-card {
   background-color: var(--color-secondary);
   border: 1px solid #e9ecef;
@@ -213,59 +188,60 @@ header.navbar {
   color: var(--color-primary);
   margin-bottom: 0;
 }
+ /* יצירת סקשן פרטים יבשים */
+  .contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
 
-/* הסקשן של פרטים יבשים */
-.contact-info {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
-}
+  .contact-item {
+    flex: 1 1 250px;
+    max-width: 300px;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    text-align: right;
+  }
 
-.contact-item {
-  flex: 1 1 250px;
-  max-width: 300px;
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  text-align: right;
-}
+  .contact-item h3 {
+    margin-top: 0;
+    font-size: 1.125rem;
+    color: var(--color-primary);
+  }
 
-.contact-item h3 {
-  margin-top: 0;
-  font-size: 1.125rem;
-  color: var(--color-primary);
-}
+  /* טקסט של פרטים */
+  .contact-details p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+  }
 
-.contact-details p {
-  margin: 0.5rem 0;
-  font-size: 1rem;
-}
 
-/* תמונות אודות */
+/* About image styling - הגדלתי פי 2 */
 .about-image {
   text-align: center;
   margin-bottom: 2rem;
 }
 
 .about-image img {
-  max-width: 600px;
+  max-width: 600px; /* הגדלתי מ-300px ל-600px */
   width: 100%;
   height: auto;
-  border-radius: 12px;
-  border: 4px solid var(--color-primary);
+  border-radius: 12px; /* הגדלתי את הborder-radius */
+  border: 4px solid var(--color-primary); /* הגדלתי את הborder */
 }
 
-/* לוגו כותרת */
+/* Header logo styling - הגדלתי */
 .header-logo {
-  max-height: 100px; /* הוגדל מ 40 ל 100 */
+  max-height: 100px; /* הגדלתי מ-40px ל-60px */
   vertical-align: middle;
   margin-left: 0.75rem;
 }
 
-/* שלבים בתהליך */
+/* Process steps styling */
 .process-steps {
   display: flex !important;
   flex-wrap: wrap !important;
@@ -282,7 +258,6 @@ header.navbar {
   max-width: 250px !important;
   cursor: default;
   transition: background-color 0.3s, transform 0.3s;
-  text-align: center;
 }
 
 .step:hover {
@@ -303,13 +278,15 @@ header.navbar {
   color: #054a91;
 }
 
+
+
 .step-desc {
   display: block !important;
   margin-top: 0.5rem;
   color: var(--color-text);
 }
 
-/* עדויות */
+/* Testimonials styling */
 .testimonials-container {
   max-width: 800px;
   margin: 0 auto;
@@ -331,7 +308,6 @@ header.navbar {
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   flex: 1 1 250px !important;
   max-width: 350px !important;
-  text-align: right;
 }
 
 .testimonial p {
@@ -344,7 +320,7 @@ header.navbar {
   color: var(--color-primary);
 }
 
-/* מאמרים */
+/* Articles section styling - סקשן חדש */
 .articles {
   display: flex;
   flex-wrap: wrap;
@@ -363,7 +339,6 @@ header.navbar {
   max-width: 350px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s, box-shadow 0.3s;
-  text-align: center;
 }
 
 .article-card:hover {
@@ -381,21 +356,21 @@ header.navbar {
   color: var(--color-text);
   margin-bottom: 1rem;
   line-height: 1.6;
+  
 }
-
+/* סגנון לתמונות במאמרים */
 .article-card img {
   max-width: 100%;
   height: auto;
   display: block;
 }
-
-.article-date {
+.article-card .article-date {
   color: var(--color-muted);
   font-size: 0.9rem;
   margin-bottom: 1rem;
 }
 
-.read-more {
+.article-card .read-more {
   color: var(--color-accent);
   font-weight: bold;
   border: 1px solid var(--color-accent);
@@ -405,13 +380,13 @@ header.navbar {
   transition: background-color 0.3s, color 0.3s;
 }
 
-.read-more:hover {
+.article-card .read-more:hover {
   background-color: var(--color-accent);
   color: var(--color-secondary);
   text-decoration: none;
 }
 
-/* מפת גוגל */
+/* Map wrapper styling */
 .map-wrapper {
   max-width: 800px;
   margin: 0 auto;
@@ -423,7 +398,7 @@ header.navbar {
   height: 300px;
 }
 
-/* פוטר */
+/* Footer styling */
 footer {
   display: flex;
   flex-direction: column;
@@ -444,7 +419,6 @@ footer img.footer-img {
   display: flex;
   gap: 1rem;
   margin-bottom: 1rem;
-  flex-wrap: wrap; /* להבטיח שהתמונות לא יפריעו במובייל */
 }
 
 .footer-social img {
@@ -459,7 +433,7 @@ footer p {
   color: var(--color-text);
 }
 
-/* כפתור חזרה למעלה */
+/* Back to top button */
 #backToTop {
   position: fixed;
   bottom: 20px;
@@ -480,76 +454,64 @@ footer p {
   background-color: var(--color-accent);
 }
 
-/* מדיה קוורי למובייל */
+@media (min-width: 768px) {
+  .hero .container {
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+    gap: 3rem; /* הגדלתי את הgap */
+  }
+}
+
+/* Responsive adjustments for mobile */
 @media (max-width: 767px) {
-  /* שינוי תפריט ניווט לסטייל נייד */
-  header.navbar {
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-  }
-
-  .navbar ul {
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  /* שיפור תמונות פרופיל במובייל */
   .hero img.profile {
-    max-width: 400px; /* הגדלתי ל-400 כדי שיהיה טוב גם במובייל */
+    max-width: 400px; /* גם במובייל הגדלתי */
   }
-
-  /* לוגו במובייל */
+  
   .hero-logo {
-    max-width: 200px; /* מוודא שהלוגו לא יהיה גדול מדי */
+    max-width: 200px; /* גם במובייל הגדלתי */
   }
-
-  /* תמונות אודות */
+  
   .about-image img {
-    max-width: 400px; /* התאמה למובייל */
+    max-width: 400px; /* גם במובייל הגדלתי */
   }
-
-  /* תפריטים וקטגוריות */
+  
   .process-steps {
     flex-direction: column !important;
     align-items: center !important;
   }
-
+  
   .step {
     max-width: 100% !important;
   }
-
-  /* עדויות */
+  
   .testimonials {
     flex-direction: column !important;
   }
-
+  
   .testimonial {
     max-width: 100% !important;
   }
-
-  /* מאמרים */
+  
   .articles {
     flex-direction: column !important;
   }
-
+  
   .article-card {
     max-width: 100% !important;
   }
-
-  /* תפריט נייד במובייל */
-  header.navbar {
-    align-items: flex-start;
+  
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
   }
 }
-</style>
+  </style>
 </head>
 <body>
   <header class="navbar">
-    <div class="logo">
-      <img src="assets/images/logo.jpeg" alt="לוגו המשרד" class="header-logo" />
+    <div class="logo"> <img src="assets/images/logo.jpeg" alt="לוגו המשרד" class="header-logo" /> 
       <a href="index.html">עו"ד יניב אברהמוב</a>
     </div>
     <nav>
@@ -566,8 +528,8 @@ footer p {
 
   <section class="hero" id="hero">
     <div class="container">
-      <img src="assets/images/logo.jpeg" alt="לוגו משרד" class="hero-logo" />
-      <img src="assets/images/hero.jpg" alt="עו"ד יניב אברהמוב" class="profile" />
+      <img src="assets/images/logo.jpeg" alt="לוגו משרד" class="hero-logo">
+      <img src="assets/images/hero.jpg" alt="עו"ד יניב אברהמוב" class="profile">
       <div class="hero-text">
         <h1>המשפט שלך בידיים בטוחות</h1>
         <p>ניסיון של מעל 8 שנים בדיני נזיקין, ביטוח לאומי ותאונות דרכים.</p>
@@ -576,95 +538,96 @@ footer p {
     </div>
   </section>
 
-  <section class="section alt" id="about">
-    <div class="about-image">
-      <img src="assets/images/card.jpeg" alt="אודות משרד" />
-    </div>
-    <h2>משרד עורכי דין יניב אברהמוב</h2>
-    <p class="description">
-      משרדנו עוסק בתחום נזקי הגוף, לרבות תאונות דרכים, תאונות עבודה ותאונות שאירעו במרחב הציבורי. כמו כן, עוסק המשרד בייצוג מול המוסד לביטוח לאומי – לרבות פגיעות עבודה, נכות כללית, סיעוד וניידות. הטיפול המשפטי ניתן לכל אורך ההליך – משלב הייעוץ הראשוני ועד לקבלת הפיצוי. נשמח לעמוד לרשותכם. המשרד נותן שירות בשפה העברית, הרוסית והאנגלית.
-    </p>
-  </section>
+  
+<section class="section alt" id="about">
+  <div class="about-image"><img src="assets/images/card.jpeg" alt="אודות משרד" /></div>
+  <h2>משרד עורכי דין יניב אברהמוב</h2>
+  <p class="description">
+    משרדנו עוסק בתחום נזקי הגוף, לרבות תאונות דרכים, תאונות עבודה ותאונות שאירעו במרחב הציבורי. כמו כן, עוסק המשרד בייצוג מול המוסד לביטוח לאומי – לרבות פגיעות עבודה, נכות כללית, סיעוד וניידות. הטיפול המשפטי ניתן לכל אורך ההליך – משלב הייעוץ הראשוני ועד לקבלת הפיצוי. נשמח לעמוד לרשותכם. המשרד נותן שירות בשפה העברית, הרוסית והאנגלית.
+  </p>
+</section>
 
-  <section class="section" id="expertise">
-    <h2>תחומי התמחות</h2>
-    <div class="practices">
-      <div class="practice-card">
-        <h3>נזקי גוף</h3>
-        <p>ייצוג תובעים בנזקי גוף עקב תאונות, רשלנות רפואית ופגיעות שונות, לרבות טיפול בפיצויים ובוועדות רפואיות.</p>
-      </div>
-      <div class="practice-card">
-        <h3>תאונות דרכים</h3>
-        <p>ליווי משפטי מלא לתאונות דרכים: תביעות נגד נהגים, חברות ביטוח וטיפול בבירוקרטיה מול רישוי רכב.</p>
-      </div>
-      <div class="practice-card">
-        <h3>תאונות עבודה</h3>
-        <p>סיוע לעובדים שנפגעו בתאונות עבודה, הכנת תביעות מול המוסד לביטוח לאומי ובתי הדין לעבודה.</p>
-      </div>
-      <div class="practice-card">
-        <h3>ביטוח לאומי</h3>
-        <p>ייצוג מול הביטוח הלאומי בתביעות לנכות, דמי פגיעה והליכים מנהליים עד לקבלת ההכרה והתשלום המגיע.</p>
-      </div>
+<section class="section" id="expertise">
+  <h2>תחומי התמחות</h2>
+  <div class="practices">
+    <div class="practice-card">
+      <h3>נזקי גוף</h3>
+      <p>ייצוג תובעים בנזקי גוף עקב תאונות, רשלנות רפואית ופגיעות שונות, לרבות טיפול בפיצויים ובוועדות רפואיות.</p>
     </div>
-  </section>
-
-  <section class="section alt" id="process">
-    <h2>תהליך העבודה המלא עבור הלקוחות שלנו</h2>
-    <div class="process-steps">
-      <div class="step" data-step="1">
-        <div class="step-number">1</div>
-        <div class="step-title">פגישת הכרות מעמיקה</div>
-        <div class="step-desc">הבנה של צרכי הלקוח, הגדרות מטרות וניתוח המצב המשפטי.</div>
-      </div>
-      <div class="step" data-step="2">
-        <div class="step-number">2</div>
-        <div class="step-title">תכנון אסטרטגיה מותאמת</div>
-        <div class="step-desc">בניית תוכנית עבודה אישית בהתאם לצרכים המיוחדים של הלקוח.</div>
-      </div>
-      <div class="step" data-step="3">
-        <div class="step-number">3</div>
-        <div class="step-title">ליווי צמוד בהליך המשפטי</div>
-        <div class="step-desc">ייצוג משפטי מלא וליווי צמוד לאורך כל הדרך עדכון שוטף.</div>
-      </div>
-      <div class="step" data-step="4">
-        <div class="step-number">4</div>
-        <div class="step-title">הגעה להסדר או סיום התיק</div>
-        <div class="step-desc">תוצאה משפטית המותאמת לצרכי הלקוח ושואפת לתוצאה מיטבית.</div>
-      </div>
+    <div class="practice-card">
+      <h3>תאונות דרכים</h3>
+      <p>ליווי משפטי מלא לתאונות דרכים: תביעות נגד נהגים, חברות ביטוח וטיפול בבירוקרטיה מול רישוי רכב.</p>
     </div>
-  </section>
-
-  <section class="section" id="testimonials">
-    <div class="testimonials-container">
-      <h2>לקוחות ממליצים</h2>
-      <div class="testimonials">
-        <div class="testimonial">
-          <p>"הטיפול של עו"ד אברהמוב בתביעת תאונת הדרכים שלי היה מקצועי ואכפתי, זכיתי לפיצוי מלא במהירות."</p>
-          <p class="author">– יפית קבלה</p>
-        </div>
-        <div class="testimonial">
-          <p>"הסיוע בתביעת תאונת עבודה בביטוח לאומי היה מצוין. קיבלנו תמיכה מלאה והליך מהיר."</p>
-          <p class="author">– ארדה גולר</p>
-        </div>
-      </div>
+    <div class="practice-card">
+      <h3>תאונות עבודה</h3>
+      <p>סיוע לעובדים שנפגעו בתאונות עבודה, הכנת תביעות מול המוסד לביטוח לאומי ובתי הדין לעבודה.</p>
     </div>
-  </section>
-
-  <section class="section alt" id="location">
-    <h2>מיקום המשרד</h2>
-    <div class="map-wrapper">
-      <iframe src="https://www.google.com/maps?hl=he&q=HaAhim%20Bejerano%20St%207,%20Ramat%20Gan&output=embed" allowfullscreen="" loading="lazy"></iframe>
+    <div class="practice-card">
+      <h3>ביטוח לאומי</h3>
+      <p>ייצוג מול הביטוח הלאומי בתביעות לנכות, דמי פגיעה והליכים מנהליים עד לקבלת ההכרה והתשלום המגיע.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- סקשן פרטים יבשים -->
+<section class="section alt" id="process">
+  <h2>תהליך העבודה המלא עבור הלקוחות שלנו</h2>
+  <div class="process-steps">
+    <div class="step" data-step="1">
+      <div class="step-number">1</div>
+      <div class="step-title">פגישת הכרות מעמיקה</div>
+      <div class="step-desc">הבנה של צרכי הלקוח, הגדרת מטרות וניתוח המצב המשפטי.</div>
+    </div>
+    <div class="step" data-step="2">
+      <div class="step-number">2</div>
+      <div class="step-title">תכנון אסטרטגיה מותאמת</div>
+      <div class="step-desc">בניית תוכנית עבודה אישית בהתאם לצרכים המיוחדים של הלקוח.</div>
+    </div>
+    <div class="step" data-step="3">
+      <div class="step-number">3</div>
+      <div class="step-title">ליווי צמוד בהליך המשפטי</div>
+      <div class="step-desc">ייצוג משפטי מלא וליווי צמוד לאורך כל הדרך ועדכון שוטף.</div>
+    </div>
+    <div class="step" data-step="4">
+      <div class="step-number">4</div>
+      <div class="step-title">הגעה להסדר או סיום התיק</div>
+      <div class="step-desc">תוצאה משפטית המותאמת לצרכי הלקוח ושואפת לתוצאה מיטבית.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="testimonials">
+  <div class="testimonials-container">
+  <h2>לקוחות ממליצים</h2>
+  <div class="testimonials">
+    <div class="testimonial">
+      <p>"הטיפול של עו"ד אברהמוב בתביעת תאונת הדרכים שלי היה מקצועי ואכפתי, זכיתי לפיצוי מלא במהירות."</p>
+      <p class="author">– יפית קבלה</p>
+    </div>
+    <div class="testimonial">
+      <p>"הסיוע בתביעת תאונת עבודה בביטוח לאומי היה מצוין. קיבלנו תמיכה מלאה והליך מהיר."</p>
+      <p class="author">– ארדה גולר</p>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+
+<section class="section alt" id="location">
+  <h2>מיקום המשרד</h2>
+  <div class="map-wrapper">
+    <iframe src="https://www.google.com/maps?hl=he&q=HaAhim%20Bejerano%20St%207,%20Ramat%20Gan&output=embed" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+</section>
+
+<!-- סקשן פרטים יבשים -->
   <section class="section" id="contact-info">
     <div class="contact-info">
       <div class="contact-item">
         <h3>כתובת</h3>
         <div class="contact-details">
           <p>האחים בז׳רנו 7, רמת גן</p>
-          <p>אליהו סעדון 130, אור יהודה</p>
+          <p> אליהו סעדון 130, אור יהודה</p>
         </div>
       </div>
       <div class="contact-item">
@@ -688,25 +651,25 @@ footer p {
     </div>
   </section>
 
-  <footer>
-    <img src="assets/images/footer.png" alt="Footer Image" class="footer-img" />
-    <div class="footer-social">
-      <!-- לוגו ווטסאפ וקישור לוואטסאפ -->
-      <a href="https://wa.me/972543455432" aria-label="צור קשר בוואטסאפ" target="_blank">
-        <img src="assets/icons/whatsapp.svg" alt="WhatsApp" />
-      </a>
-      <!-- רשתות חברתיות נוספות -->
-      <a href="https://www.linkedin.com/in/yaniv-avrahamov-53b76717a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" aria-label="LinkedIn" target="_blank"><img src="assets/icons/linkedin.svg" alt="LinkedIn" /></a>
-      <a href="https://www.facebook.com/share/1LwnXTz5py/?mibextid=wwXIfr" aria-label="Facebook" target="_blank"><img src="assets/icons/facebook.svg" alt="Facebook" /></a>
-      <a href="https://www.instagram.com/yaniv_avrahamov_adv" aria-label="Instagram" target="_blank"><img src="assets/icons/instagram.svg" alt="Instagram" /></a>
-    </div>
-    <p>© 2025 עו"ד יניב אברהמוב. כל הזכויות שמורות.</p>
-  </footer>
+<footer>
+  <img src="assets/images/footer.png" alt="Footer Image" class="footer-img" />
+  <div class="footer-social">
+    <!-- לוגו ווטסאפ וקישור לוואטסאפ -->
+    <a href="https://wa.me/972543455432" aria-label="צור קשר בוואטסאפ" target="_blank">
+      <img src="assets/icons/whatsapp.svg" alt="WhatsApp" />
+    </a>
+    <!-- רשתות חברתיות נוספות -->
+    <a href="https://www.linkedin.com/in/yaniv-avrahamov-53b76717a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" aria-label="LinkedIn" target="_blank"><img src="assets/icons/linkedin.svg" alt="LinkedIn" /></a>
+    <a href="https://www.facebook.com/share/1LwnXTz5py/?mibextid=wwXIfr" aria-label="Facebook" target="_blank"><img src="assets/icons/facebook.svg" alt="Facebook" /></a>
+    <a href="https://www.instagram.com/yaniv_avrahamov_adv" aria-label="Instagram" target="_blank"><img src="assets/icons/instagram.svg" alt="Instagram" /></a>
+  </div>
+  <p>© 2025 עו"ד יניב אברהמוב. כל הזכויות שמורות.</p>
+</footer>
 
   <button id="backToTop" title="חזור למעלה" aria-label="חזור למעלה">↑</button>
 
   <script>
-    // פונקציית חזרה למעלה
+    // Back to top button functionality
     window.onscroll = function() {
       const button = document.getElementById('backToTop');
       if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
