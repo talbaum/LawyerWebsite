@@ -2,687 +2,328 @@
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>עו"ד יניב אברהמוב | מתמחה בדיני נזיקין </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>עו"ד יניב אברהמוב | מידע מקצועי</title>
   <link rel="icon" href="assets/images/logo.jpeg" type="image/png">
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="עו"ד יניב אברהמוב - מומחה בנזקי גוף ותאונות דרכים. ליווי משפטי אישי, מקצועי ודיסקרטי." />
-  <meta property="og:title" content="עו"ד יניב אברהמוב | מתמחה בדיני נזיקין" />
-  <meta property="og:description" content="ניסיון של מעל 8 שנים בייצוג נפגעי תאונות דרכים ונזקי גוף." />
-  <meta property="og:image" content="assets/images/hero.jpg" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="he_IL" />
   <style>
-:root {
-  --color-primary: #054a91;
-  --color-secondary: #ffffff;
-  --color-accent: #0d6efd;
-  --color-text: #0d1f3f;
-  --color-muted: #6c757d;
-  --color-bg-section: #f8f9fa;
-}
+    :root {
+      --color-primary: #054a91;
+      --color-secondary: #ffffff;
+      --color-accent: #0d6efd;
+      --color-text: #0d1f3f;
+      --color-bg-light: #f8f9fa;
+      --color-bg-dark: #e0ebf5;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 0; font-family: Arial, sans-serif; color: var(--color-text); background: var(--color-secondary); line-height: 1.5; direction: rtl; }
+    a { color: var(--color-accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  color: var(--color-text);
-  background-color: var(--color-secondary);
-  line-height: 1.6;
-}
+    /* NAVBAR */
+    header.navbar {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem; background: var(--color-secondary);
+      position: sticky; top: 0; z-index: 1000;
+      border-bottom: 1px solid #e9ecef;
+    }
+    header .logo img { max-height: 50px; }
+    .menu-toggle { display: none; font-size: 1.8rem; cursor: pointer; }
+    nav { display: flex; gap: 1rem; }
+    nav a { padding: 0.5rem 0.75rem; border-radius: 4px; color: var(--color-text); }
+    nav a:hover, nav a.active { background: var(--color-accent); color: #fff; }
+    @media (max-width: 768px) {
+      .menu-toggle { display: block; }
+      nav { display: none; flex-direction: column; position: absolute; top: 100%; right: 0; background: #fff; width: 100%; }
+      #menu-checkbox:checked + nav { display: flex; }
+    }
 
-a {
-  color: var(--color-accent);
-  text-decoration: none;
-}
+    /* HERO */
+    .hero {
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      padding: 2rem 1rem; background: var(--color-bg-light);
+    }
+    .hero .container {
+      display: flex; flex-direction: column; align-items: center; gap: 4rem; max-width: 1000px; width: 100%;
+    }
+    .hero .image img {
+      width: 100%; max-width: 500px; height: auto;
+      border: 2px solid var(--color-primary); border-radius: 8px;
+    }
+    .hero .text h2 {
+      margin: 0; font-size: 1.75rem; color: var(--color-primary);
+    }
+    .hero .text p {
+      margin: 0.5rem 0;
+    }
+    .hero .text .btn-primary {
+      padding: 0.75rem 1.5rem; background: var(--color-primary); color: #fff; border-radius: 6px;
+      text-decoration: none;
+    }
+    @media (min-width: 768px) {
+      .hero .container { flex-direction: row; text-align: left; }
+      .hero .text { flex: 1; }
+      .hero .image { flex: 1; }
+    }
+    
+    .hero .btn-wrapper {
+      text-align: right;
+      margin-top: 2rem;
+    }
 
-a:hover {
-  color: var(--color-primary);
-  text-decoration: underline;
-}
+    /* CARD */
+    #card-section {
+      display: flex; justify-content: center; padding: 1rem;
+    }
+    #card-section img {
+      width: 100%; max-width: 400px; /* מחצית הגודל הקדום */
+      height: auto; border-radius: 8px;
+    }
 
-header.navbar {
-  background-color: var(--color-secondary);
-  border-bottom: 1px solid #e9ecef;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-}
+    /* ABOUT TEXT */
+    #about-text {
+      padding: 2rem 1rem; max-width: 800px; margin: 0 auto; text-align: center;
+    }
+    #about-text h2 {
+      color: var(--color-primary); margin-bottom: 1rem;
+    }
+    #about-text p {
+      color: var(--color-text); line-height: 1.6;
+    }
 
-.navbar .logo {
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: var(--color-primary);
-  display: flex;
-  align-items: center;
-}
+    /* EXPERTISE */
+    #expertise {
+      padding: 2rem 1rem;
+    }
+    #expertise h2 {
+      text-align: center; color: var(--color-primary); margin-bottom: 1.5rem;
+    }
+    .practices {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1rem; max-width: 1000px; margin: 0 auto;
+    }
+    .practice-card {
+      background: var(--color-bg-light); padding: 1rem; border-radius: 8px;
+      display: flex; flex-direction: column; justify-content: center;
+      height: 100px; text-align: center;
+    }
+    .practice-card:nth-child(even) { background: var(--color-bg-dark); }
+    .practice-card h3 {
+      margin: 0; color: var(--color-primary); font-size: 1rem;
+    }
+    .practice-card a {
+      margin-top: auto; font-size: 0.85rem; color: var(--color-accent);
+      text-decoration: none;
+    }
+    @media (max-width: 768px) {
+      .practice-card { height: auto; }
+    }
 
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  margin: 0;
-  padding: 0;
-}
+    /* TESTIMONIALS */
+    #testimonials {
+      padding: 2rem 1rem; background: var(--color-bg-light);
+    }
+    #testimonials h2 {
+      text-align: center; color: var(--color-primary); margin-bottom: 1rem;
+    }
+    .testimonial-container {
+      max-width: 600px; margin: 0 auto; position: relative;
+    }
+    .testimonial {
+      display: none; background: #fff; padding: 1rem;
+      border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .testimonial.active { display: block; }
+    .testimonial p {
+      margin: 0.5rem 0; font-style: italic;
+    }
+    .testimonial .author {
+      text-align: right; font-weight: bold;
+    }
+    .testimonial-nav {
+      display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;
+    }
+    .testimonial-nav button {
+      background: var(--color-primary); color: #fff; border: none;
+      padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer;
+    }
 
-.navbar li a {
-  color: var(--color-text);
-  padding: 0.5rem 0.75rem;
-  border-radius: 4px;
-}
+    /* CONTACT INFO */
+    #contact-info {
+      padding: 2rem 1rem;
+    }
+    #contact-info h2 {
+      text-align: center; color: var(--color-primary); margin-bottom: 1rem;
+    }
+    .contact-item {
+      text-align: center; margin-bottom: 1rem;
+    }
+    .contact-item h3 {
+      margin: 0; color: var(--color-primary); font-size: 1.25rem;
+    }
+    .contact-item p a {
+      font-size: 1.1rem; font-weight: bold; color: var(--color-text);
+    }
+    .map-wrapper {
+      max-width: 800px; margin: 1rem auto;
+    }
+    .map-wrapper iframe {
+      width: 100%; height: 300px; border: 0;
+    }
 
-.navbar li a:hover, .navbar li a.active {
-  background-color: var(--color-accent);
-  color: var(--color-secondary);
-}
+    /* LIKE SECTION */
+    #like {
+      padding: 2rem 1rem; text-align: center;
+    }
+    .like-card {
+      position: relative; width: 100%; max-width: 400px; margin: 0 auto;
+    }
+    .like-card img.cover {
+      width: 100%; height: auto; border-radius: 8px;
+      filter: blur(1px);
+    }
+    .like-card h3 {
+      position: absolute; top: 10px; right: 10px;
+      margin: 0; font-size: 2rem; color: #fff;
+      text-shadow: 0 0 5px rgba(0,0,0,0.7);
+    }
+    .like-card button.follow {
+      position: absolute; bottom: 10px; left: 10px;
+      background: var(--color-accent); color: #fff; border: none;
+      padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer;
+    }
 
-.hero {
-  background-color: var(--color-secondary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 1rem; /* הגדלתי את הpadding */
-}
-
-.hero .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 2rem; /* הגדלתי את הgap */
-}
-
-.hero img.profile {
-  max-width: 600px; /* הגדלתי פי 1.5 */
-  width: 100%;
-  height: auto;
-  border-radius: 50%;
-  border: 6px solid var(--color-primary); /* הגדלתי את הborder */
-  margin-bottom: 1.5rem;
-}
-
-.hero h1 {
-  font-size: 2.5rem; /* הגדלתי את הגופן */
-  color: var(--color-primary);
-}
-
-.hero p {
-  max-width: 700px;
-  color: var(--color-muted);
-  font-size: 1.1rem; /* הגדלתי קצת את הגופן */
-}
-
-.hero .btn-primary {
-  padding: 1rem 2rem; /* הגדלתי את הכפתור */
-  background-color: var(--color-primary);
-  color: var(--color-secondary);
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1.1rem;
-}
-
-.hero .btn-primary:hover {
-  background-color: var(--color-accent);
-}
-
-.hero-logo {
-  max-width: 250px; /* הגדלתי מ-150px ל-250px */
-  width: 100%;
-  height: auto;
-  margin: 1.5rem auto;
-  display: block;
-}
-
-.section {
-  padding: 3rem 1rem;
-}
-
-.section.alt {
-  background-color: var(--color-bg-section);
-}
-
-.section h2 {
-  font-size: 1.75rem;
-  color: var(--color-primary);
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.section p.description {
-  max-width: 800px;
-  margin: 0 auto 2rem;
-  color: var(--color-text);
-  text-align: center;
-}
-
-.practices {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-}
-
-.practice-card {
-  background-color: var(--color-secondary);
-  border: 1px solid #e9ecef;
-  border-radius: 8px;
-  padding: 1.5rem;
-  width: 200px;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.practice-card img.icon {
-  width: 48px;
-  height: 48px;
-  margin-bottom: 0.75rem;
-}
-
-.practice-card h3 {
-  font-size: 1.125rem;
-  color: var(--color-primary);
-  margin-bottom: 0;
-}
- /* יצירת סקשן פרטים יבשים */
-  .contact-info {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-
-  .contact-item {
-    flex: 1 1 250px;
-    max-width: 300px;
-    background-color: #fff;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    text-align: right;
-  }
-
-  .contact-item h3 {
-    margin-top: 0;
-    font-size: 1.125rem;
-    color: var(--color-primary);
-  }
-
-  /* טקסט של פרטים */
-  .contact-details p {
-    margin: 0.5rem 0;
-    font-size: 1rem;
-  }
-
-
-/* About image styling - הגדלתי פי 2 */
-.about-image {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.about-image img {
-  max-width: 600px; /* הגדלתי מ-300px ל-600px */
-  width: 100%;
-  height: auto;
-  border-radius: 12px; /* הגדלתי את הborder-radius */
-  border: 4px solid var(--color-primary); /* הגדלתי את הborder */
-}
-
-/* Header logo styling - הגדלתי */
-.header-logo {
-  max-height: 100px; /* הגדלתי מ-40px ל-60px */
-  vertical-align: middle;
-  margin-left: 0.75rem;
-}
-
-/* Process steps styling */
-.process-steps {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  justify-content: center !important;
-  gap: 1rem !important;
-}
-
-.step {
-  background-color: var(--color-secondary);
-  border: 1px solid #e9ecef;
-  border-radius: 8px;
-  padding: 1rem;
-  flex: 1 1 200px !important;
-  max-width: 250px !important;
-  cursor: default;
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-.step:hover {
-  background-color: var(--color-bg-section);
-  transform: translateY(-5px);
-}
-
-.step-number {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--color-primary);
-}
-
-.step-title {
-  margin-top: 0.5rem;
-  font-size: 1.125rem;
-  font-weight: bold;
-  color: #054a91;
-}
-
-
-
-.step-desc {
-  display: block !important;
-  margin-top: 0.5rem;
-  color: var(--color-text);
-}
-
-/* Testimonials styling */
-.testimonials-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 1rem 0;
-}
-
-.testimonials {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  justify-content: center !important;
-  gap: 1.5rem !important;
-}
-
-.testimonial {
-  background-color: var(--color-secondary);
-  border: 1px solid #e9ecef;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  flex: 1 1 250px !important;
-  max-width: 350px !important;
-}
-
-.testimonial p {
-  margin: 0.5rem 0;
-}
-
-.testimonial .author {
-  text-align: right;
-  font-weight: bold;
-  color: var(--color-primary);
-}
-
-/* Articles section styling - סקשן חדש */
-.articles {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.article-card {
-  background-color: var(--color-secondary);
-  border: 1px solid #e9ecef;
-  border-radius: 12px;
-  padding: 1.5rem;
-  flex: 1 1 300px;
-  max-width: 350px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.article-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
-
-.article-card h3 {
-  color: var(--color-primary);
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-}
-
-.article-card p {
-  color: var(--color-text);
-  margin-bottom: 1rem;
-  line-height: 1.6;
-  
-}
-/* סגנון לתמונות במאמרים */
-.article-card img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-.article-card .article-date {
-  color: var(--color-muted);
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-}
-
-.article-card .read-more {
-  color: var(--color-accent);
-  font-weight: bold;
-  border: 1px solid var(--color-accent);
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  display: inline-block;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.article-card .read-more:hover {
-  background-color: var(--color-accent);
-  color: var(--color-secondary);
-  text-decoration: none;
-}
-
-/* Map wrapper styling */
-.map-wrapper {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 1rem 0;
-}
-
-.map-wrapper iframe {
-  width: 100%;
-  height: 300px;
-}
-
-/* Footer styling */
-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem 1rem;
-  background-color: var(--color-secondary) !important;
-  color: var(--color-text) !important;
-}
-
-footer img.footer-img {
-  max-width: 800px !important;
-  width: auto;
-  height: auto;
-  margin-bottom: 1rem;
-}
-
-.footer-social {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.footer-social img {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-}
-
-footer p {
-  margin: 0.5rem 0;
-  font-size: 1rem;
-  color: var(--color-text);
-}
-
-/* Back to top button */
-#backToTop {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: var(--color-primary);
-  color: var(--color-secondary);
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 18px;
-  cursor: pointer;
-  display: none;
-  z-index: 1000;
-}
-
-#backToTop:hover {
-  background-color: var(--color-accent);
-}
-
-@media (min-width: 768px) {
-  .hero .container {
-    flex-direction: row;
-    text-align: left;
-    align-items: center;
-    gap: 3rem; /* הגדלתי את הgap */
-  }
-}
-
-/* Responsive adjustments for mobile */
-@media (max-width: 767px) {
-  .hero img.profile {
-    max-width: 400px; /* גם במובייל הגדלתי */
-  }
-  
-  .hero-logo {
-    max-width: 200px; /* גם במובייל הגדלתי */
-  }
-  
-  .about-image img {
-    max-width: 400px; /* גם במובייל הגדלתי */
-  }
-  
-  .process-steps {
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-  
-  .step {
-    max-width: 100% !important;
-  }
-  
-  .testimonials {
-    flex-direction: column !important;
-  }
-  
-  .testimonial {
-    max-width: 100% !important;
-  }
-  
-  .articles {
-    flex-direction: column !important;
-  }
-  
-  .article-card {
-    max-width: 100% !important;
-  }
-  
-  .navbar {
-    flex-direction: column;
-    gap: 1rem;
-  }
-}
+    /* FOOTER */
+    footer {
+      padding: 1.5rem; background: var(--color-secondary);
+      text-align: center; border-top: 1px solid #e9ecef;
+    }
+    .footer-social a { margin: 0 0.5rem; }
+    .footer-social img { width: 40px; height: 40px; }
   </style>
 </head>
 <body>
+
   <header class="navbar">
-    <div class="logo"> <img src="assets/images/logo.jpeg" alt="לוגו המשרד" class="header-logo" /> 
-      <a href="index.html">עו"ד יניב אברהמוב</a>
-    </div>
+    <div class="logo"><img src="assets/images/logo.jpeg" alt="לוגו"></div>
+    <label for="menu-checkbox" class="menu-toggle">☰</label>
+    <input type="checkbox" id="menu-checkbox" hidden>
     <nav>
-      <ul>
-        <li><a href="index.html" class="active">ראשי</a></li>
-        <li><a href="#about">אודות</a></li>
-        <li><a href="#expertise">תחומי התמחות</a></li>
-        <li><a href="#process">תהליך עבודה</a></li>
-        <li><a href="#testimonials">המלצות</a></li>
-        <li><a href="#contact-info">צור קשר</a></li>
-      </ul>
+      <a href="#about" class="active">ראשי</a>
+      <a href="#expertise">מידע מקצועי</a>
+      <a href="#testimonials">המלצות</a>
+      <a href="#contact-info">צור קשר</a>
     </nav>
   </header>
 
-  <section class="hero" id="hero">
-    <div class="container">
-      <img src="assets/images/logo.jpeg" alt="לוגו משרד" class="hero-logo">
-      <img src="assets/images/hero.jpg" alt="עו"ד יניב אברהמוב" class="profile">
-      <div class="hero-text">
-        <h1>המשפט שלך בידיים בטוחות</h1>
-        <p>ניסיון של מעל 8 שנים בדיני נזיקין, ביטוח לאומי ותאונות דרכים.</p>
-        <a href="https://wa.me/972543455432" target="_blank" class="btn-primary">צור קשר בוואטסאפ</a>
+<section class="hero" id="about">
+  <div class="container">
+    <div class="image">
+      <img src="assets/images/hero.jpg" alt="עו"ד יניב אברהמוב">
+    </div>
+    <div class="text">
+      <h2 style="text-align: right; margin-bottom: 1.5rem;">משרד עורכי דין יניב אברהמוב</h2>
+      <p style="text-align: right; margin-bottom: 1.5rem;">
+        משרדנו עוסק בתחום נזקי הגוף, לרבות תאונות דרכים, תאונות עבודה ותאונות שאירעו במרחב הציבורי.<br>
+        כמו כן, עוסק המשרד בייצוג מול המוסד לביטוח לאומי – לרבות פגיעות עבודה, נכות כללית, סיעוד וניידות.<br>
+        הטיפול המשפטי ניתן לכל אורך ההליך – משלב הייעוץ הראשוני ועד לקבלת הפיצוי.<br>
+        המשרד נותן שירות בשפה העברית, הרוסית והאנגלית.<br>
+        נשמח לעמוד לרשותכם.<br>
+        פנו אלינו לקבלת ייעוץ אישי ללא התחייבות.
+      </p>
+      <div class="btn-wrapper">
+        <a href="https://wa.me/0543455432" class="btn-primary">צור קשר בוואטסאפ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section id="card-section">
+    <img src="assets/images/card.jpeg" alt="כרטיס ביקור מלבני">
+  </section>
+
+
+  <section id="expertise">
+    <h2>מידע מקצועי</h2>
+    <div class="practices">
+      <div class="practice-card"><h3>נזקי גוף</h3><a href="#">המשך קריאה</a></div>
+      <div class="practice-card"><h3>תאונות דרכים</h3><a href="#">המשך קריאה</a></div>
+      <div class="practice-card"><h3>תאונות אופנוע</h3><a href="#">המשך קריאה</a></div>
+      <div class="practice-card"><h3>תאונות עבודה</h3><a href="#">המשך קריאה</a></div>
+      <div class="practice-card"><h3>ביטוח לאומי</h3><a href="#">המשך קריאה</a></div>
+      <div class="practice-card"><h3>נכות כללית</h3><a href="#">המשך קריאה</a></div>
+      <div class="practice-card"><h3>תאונות אישיות</h3><a href="#">המשך קריאה</a></div>
+      <div class="practice-card"><h3>תאונות הולכי רגל</h3><a href="#">המשך קריאה</a></div>
+      <div class="practice-card"><h3>תאונות אופניים</h3><a href="#">המשך קריאה</a></div>
+      <div class="practice-card"><h3>תאונות תלמידים</h3><a href="#">המשך קריאה</a></div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <h2>לקוחות ממליצים</h2>
+    <div class="testimonial-container">
+      <div class="testimonial active">
+        <p>"ברצוני לשבח מכל הלב את השירות שקיבלתי מעורך דין יניב. אני מאוד מרוצה מהיחס שקיבלתי. יניב ענה תמיד בסבלנות והסביר לי כל מה ששאלתי. תמיד חזר אליי עם תשובות והיה זמין לכל שאלה והסבר שרציתי, הכל בנעימות, במקצועיות..."</p>
+        <p class="author">– א.ג.</p>
+      </div>
+      <div class="testimonial">
+        <p>"הטיפול המסור והמקצועי של יניב גרם לי להרגיש שהעניין שלי באמת חשוב. ממליץ בחום!"</p>
+        <p class="author">– מ.ק.</p>
+      </div>
+    </div>
+    <div class="testimonial-nav">
+      <button id="prevBtn">⟨</button>
+      <button id="nextBtn">⟩</button>
+    </div>
+  </section>
+
+  <section id="contact-info">
+    <h2>צור קשר</h2>
+    <div class="contact-item"><h3>טלפון</h3><p><a href="tel:0543455432">054-3455432</a></p></div>
+    <div class="contact-item"><h3>כתובת</h3><p>האחים בז׳רנו 7, רמת גן / אליהו סעדון 130, אור יהודה</p></div>
+    <div class="contact-item"><h3>אימייל</h3><p><a href="mailto:yaniv.a.adv@gmail.com">yaniv.a.adv@gmail.com</a></p></div>
+    <div class="contact-item"><h3>שעות פעילות</h3><p>א'-ה' 9:00–18:00</p></div>
+    <div class="map-wrapper">
+      <iframe src="https://www.google.com/maps?hl=he&q=%D7%94%D7%94%D7%92%D7%A0%D7%94%20130,%20%D7%90%D7%95%D7%A8%20%D7%99%D7%94%D7%95%D7%93%D7%94&output=embed" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <section id="like">
+    <h2>עשו לנו לייק</h2>
+    <div class="like-card">
+      <img src="assets/images/tmp.jpg" alt="כיסוי פייסבוק" class="cover">
+      <div class="overlay">
+        <h3>עורך דין יניב אברהמוב</h3>
+        <button class="follow">עקוב אחרי הדף</button>
       </div>
     </div>
   </section>
 
-  
-<section class="section alt" id="about">
-  <div class="about-image"><img src="assets/images/card.jpeg" alt="אודות משרד" /></div>
-  <h2>משרד עורכי דין יניב אברהמוב</h2>
-  <p class="description">
-    משרדנו עוסק בתחום נזקי הגוף, לרבות תאונות דרכים, תאונות עבודה ותאונות שאירעו במרחב הציבורי. כמו כן, עוסק המשרד בייצוג מול המוסד לביטוח לאומי – לרבות פגיעות עבודה, נכות כללית, סיעוד וניידות. הטיפול המשפטי ניתן לכל אורך ההליך – משלב הייעוץ הראשוני ועד לקבלת הפיצוי. נשמח לעמוד לרשותכם. המשרד נותן שירות בשפה העברית, הרוסית והאנגלית.
-  </p>
-</section>
-
-<section class="section" id="expertise">
-  <h2>תחומי התמחות</h2>
-  <div class="practices">
-    <div class="practice-card">
-      <h3>נזקי גוף</h3>
-      <p>ייצוג תובעים בנזקי גוף עקב תאונות, רשלנות רפואית ופגיעות שונות, לרבות טיפול בפיצויים ובוועדות רפואיות.</p>
+  <footer>
+    <img src="assets/images/footer.png" alt="Footer Image" class="footer-img">
+    <div class="footer-social">
+      <a href="https://wa.me/0543455432" target="_blank"><img src="assets/icons/whatsapp.svg" alt="WhatsApp"></a>
+      <a href="https://www.linkedin.com/in/yaniv-avrahamov-53b76717a" target="_blank"><img src="assets/icons/linkedin.svg" alt="LinkedIn"></a>
+      <a href="https://www.facebook.com/people/Yanivavrahamov/61577000080529/" target="_blank"><img src="assets/icons/facebook.svg" alt="Facebook"></a>
+      <a href="https://www.instagram.com/yaniv_avrahamov_adv" target="_blank"><img src="assets/icons/instagram.svg" alt="Instagram"></a>
     </div>
-    <div class="practice-card">
-      <h3>תאונות דרכים</h3>
-      <p>ליווי משפטי מלא לתאונות דרכים: תביעות נגד נהגים, חברות ביטוח וטיפול בבירוקרטיה מול רישוי רכב.</p>
-    </div>
-    <div class="practice-card">
-      <h3>תאונות עבודה</h3>
-      <p>סיוע לעובדים שנפגעו בתאונות עבודה, הכנת תביעות מול המוסד לביטוח לאומי ובתי הדין לעבודה.</p>
-    </div>
-    <div class="practice-card">
-      <h3>ביטוח לאומי</h3>
-      <p>ייצוג מול הביטוח הלאומי בתביעות לנכות, דמי פגיעה והליכים מנהליים עד לקבלת ההכרה והתשלום המגיע.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section alt" id="process">
-  <h2>תהליך העבודה המלא עבור הלקוחות שלנו</h2>
-  <div class="process-steps">
-    <div class="step" data-step="1">
-      <div class="step-number">1</div>
-      <div class="step-title">פגישת הכרות מעמיקה</div>
-      <div class="step-desc">הבנה של צרכי הלקוח, הגדרת מטרות וניתוח המצב המשפטי.</div>
-    </div>
-    <div class="step" data-step="2">
-      <div class="step-number">2</div>
-      <div class="step-title">תכנון אסטרטגיה מותאמת</div>
-      <div class="step-desc">בניית תוכנית עבודה אישית בהתאם לצרכים המיוחדים של הלקוח.</div>
-    </div>
-    <div class="step" data-step="3">
-      <div class="step-number">3</div>
-      <div class="step-title">ליווי צמוד בהליך המשפטי</div>
-      <div class="step-desc">ייצוג משפטי מלא וליווי צמוד לאורך כל הדרך ועדכון שוטף.</div>
-    </div>
-    <div class="step" data-step="4">
-      <div class="step-number">4</div>
-      <div class="step-title">הגעה להסדר או סיום התיק</div>
-      <div class="step-desc">תוצאה משפטית המותאמת לצרכי הלקוח ושואפת לתוצאה מיטבית.</div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="testimonials">
-  <div class="testimonials-container">
-  <h2>לקוחות ממליצים</h2>
-  <div class="testimonials">
-    <div class="testimonial">
-      <p>"הטיפול של עו"ד אברהמוב בתביעת תאונת הדרכים שלי היה מקצועי ואכפתי, זכיתי לפיצוי מלא במהירות."</p>
-      <p class="author">– יפית קבלה</p>
-    </div>
-    <div class="testimonial">
-      <p>"הסיוע בתביעת תאונת עבודה בביטוח לאומי היה מצוין. קיבלנו תמיכה מלאה והליך מהיר."</p>
-      <p class="author">– ארדה גולר</p>
-    </div>
-  </div>
-  </div>
-</section>
-
-
-
-<section class="section alt" id="location">
-  <h2>מיקום המשרד</h2>
-  <div class="map-wrapper">
-    <iframe src="https://www.google.com/maps?hl=he&q=HaAhim%20Bejerano%20St%207,%20Ramat%20Gan&output=embed" allowfullscreen="" loading="lazy"></iframe>
-  </div>
-</section>
-
-<!-- סקשן פרטים יבשים -->
-  <section class="section" id="contact-info">
-    <div class="contact-info">
-      <div class="contact-item">
-        <h3>כתובת</h3>
-        <div class="contact-details">
-          <p>האחים בז׳רנו 7, רמת גן</p>
-          <p> אליהו סעדון 130, אור יהודה</p>
-        </div>
-      </div>
-      <div class="contact-item">
-        <h3>טלפון</h3>
-        <div class="contact-details">
-          <p>054-3455432</p>
-        </div>
-      </div>
-      <div class="contact-item">
-        <h3>מייל</h3>
-        <div class="contact-details">
-          <p>yaniv.a.adv@gmail.com</p>
-        </div>
-      </div>
-      <div class="contact-item">
-        <h3>שעות פעילות</h3>
-        <div class="contact-details">
-          <p>ימים א'-ה' 9:00 - 18:00</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<footer>
-  <img src="assets/images/footer.png" alt="Footer Image" class="footer-img" />
-  <div class="footer-social">
-    <!-- לוגו ווטסאפ וקישור לוואטסאפ -->
-    <a href="https://wa.me/972543455432" aria-label="צור קשר בוואטסאפ" target="_blank">
-      <img src="assets/icons/whatsapp.svg" alt="WhatsApp" />
-    </a>
-    <!-- רשתות חברתיות נוספות -->
-    <a href="https://www.linkedin.com/in/yaniv-avrahamov-53b76717a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" aria-label="LinkedIn" target="_blank"><img src="assets/icons/linkedin.svg" alt="LinkedIn" /></a>
-    <a href="https://www.facebook.com/people/Yanivavrahamov/61577000080529/" aria-label="Facebook" target="_blank"><img src="assets/icons/facebook.svg" alt="Facebook" /></a>
-    <a href="https://www.instagram.com/yaniv_avrahamov_adv" aria-label="Instagram" target="_blank"><img src="assets/icons/instagram.svg" alt="Instagram" /></a>
-  </div>
-  <p>© 2025 עו"ד יניב אברהמוב. כל הזכויות שמורות.</p>
-</footer>
-
-  <button id="backToTop" title="חזור למעלה" aria-label="חזור למעלה">↑</button>
+    <p>© 2025 עו"ד יניב אברהמוב. כל הזכויות שמורות.</p>
+  </footer>
 
   <script>
-    // Back to top button functionality
-    window.onscroll = function() {
-      const button = document.getElementById('backToTop');
-      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        button.style.display = "block";
-      } else {
-        button.style.display = "none";
-      }
-    };
-
-    document.getElementById('backToTop').onclick = function() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    };
+    const testimonials = document.querySelectorAll('.testimonial');
+    let current = 0;
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      testimonials[current].classList.remove('active');
+      current = (current + 1) % testimonials.length;
+      testimonials[current].classList.add('active');
+    });
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      testimonials[current].classList.remove('active');
+      current = (current - 1 + testimonials.length) % testimonials.length;
+      testimonials[current].classList.add('active');
+    });
   </script>
+
 </body>
 </html>
