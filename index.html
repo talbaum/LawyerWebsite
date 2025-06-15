@@ -102,7 +102,7 @@ nav a.active {
   }
 
   nav a {
-    font-size: 0.85rem;    /* גופן קטן מאוד */
+    font-size: 0.65rem;    /* גופן קטן מאוד */
     padding: 0.1rem 0.3rem; /* פאדינג קטן */
     white-space: nowrap;   /* לא לשבור שורות */
   }
@@ -195,7 +195,25 @@ nav a.active {
     max-width: 100%;
   }
 }
-
+@media (max-width: 768px) {
+  .hero .container {
+    padding-left: 1rem;  /* מוסיף רווח שמאלי */
+    padding-right: 1rem; /* מוסיף רווח ימני */
+  }
+  .hero .text-with-logo .text {
+    padding-left: 0; /* אפשר להוריד פדינג אם יש */
+    padding-right: 0;
+    margin-left: auto;  /* ממרכז את התיבה */
+    margin-right: auto;
+    max-width: 100%;
+  }
+  .hero .image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+}
     /* CARD */
     #card-section {
       display: flex; justify-content: center; padding: 1rem;
