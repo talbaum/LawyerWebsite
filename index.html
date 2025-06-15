@@ -251,30 +251,33 @@ nav a.active {
 }
 .practice-card {
   background: var(--color-bg-light);
-  padding: 1rem;
+  padding: 1.5rem;           /* קצת יותר פנימי */
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100px;
+  height: 140px;             /* יותר גובה */
   text-align: center;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   transition: transform 0.2s;
 }
+
 .practice-card:hover {
-  transform: scale(1.02);
+  transform: scale(1.05);
 }
 .practice-card:nth-child(even) {
   background: var(--color-bg-dark);
 }
+
 .practice-card h3 {
   margin: 0;
   color: var(--color-primary);
-  font-size: 1rem;
+  font-size: 1.25rem;        /* הגדלת הכותרת */
+  font-weight: 600;
 }
 .practice-card a {
   margin-top: auto;
-  font-size: 0.85rem;
+  font-size: 1rem;           /* הגדלת הטקסט של הלינק */
   color: var(--color-accent);
   text-decoration: none;
 }
@@ -407,6 +410,15 @@ nav a.active {
       padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer;
     }
 
+/* Follow us*/
+/* שינוי צבע של "עקבו אחרינו ברשתות" לכחול - נניח שיש לזה מחלקה בשם .follow-us */
+.follow-us {
+  color: var(--color-primary) !important;
+  font-weight: 600;
+}
+
+
+
     /* FOOTER */
     footer {
       padding: 1.5rem; background: var(--color-secondary);
@@ -508,7 +520,7 @@ nav a.active {
   </section>
 
 <section id="like">
-  <h2>עקבו אחרינו ברשתות</h2>
+<h2 class="follow-us">עקבו אחרינו ברשתות</h2>
   <div class="like-card">
     <img src="assets/images/fb-page.jpg" alt="כיסוי פייסבוק" class="cover">
     <div class="overlay">
