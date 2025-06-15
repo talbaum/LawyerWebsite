@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>עו"d יניב אברהמוב | מידע מקצועי</title>
+  <title>עו"ד יניב אברהמוב | מידע מקצועי</title>
   <link rel="icon" href="assets/images/logo.jpeg" type="image/png">
   <style>
     :root {
@@ -22,27 +22,88 @@
       margin: 0; padding: 0; font-family: 'Rubik', Arial, sans-serif; color: var(--color-text); background: var(--color-secondary); line-height: 1.5; direction: rtl; }
     a { color: var(--color-accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
+/* NAVBAR */
+header.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--color-secondary);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #e9ecef;
+  max-width: 100vw;
+  overflow-x: hidden;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
 
-        /* NAVBAR */
-    header.navbar {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1rem; background: var(--color-secondary);
-      position: sticky; top: 0; z-index: 1000;
-      border-bottom: 1px solid #e9ecef;
-    }
-    header .logo img { max-height: 100px; }
-    nav {
-      display: flex; gap: 1rem;
-    }
-    nav a {
-      padding: 0.5rem 0.75rem;
-      border-radius: 4px;
-      color: var(--color-text);
-    }
-    nav a:hover, nav a.active {
-      background: var(--color-accent);
-      color: #fff;
-    }
+/* לוגו */
+header .logo {
+  max-width: 100%;
+  flex-shrink: 1;
+}
+
+header .logo img {
+  max-height: 120px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ניווט */
+nav {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.25rem;
+  justify-content: flex-end;
+  max-width: 60%;
+  flex-shrink: 1;
+  overflow-x: auto;
+}
+
+nav a {
+  padding: 0.35rem 0.5rem;
+  font-size: 1rem;
+  color: var(--color-text);
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+nav a:hover,
+nav a.active {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+/* מובייל – מתחת ל־500px */
+@media (max-width: 500px) {
+  header.navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+  }
+
+  header .logo {
+    max-width: 100%;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  nav {
+    width: 100%;
+    justify-content: center;
+    gap: 0.25rem;
+    flex-wrap: nowrap;
+  }
+
+  nav a {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+  }
+}
 
 
 
@@ -150,35 +211,105 @@
     #about-text p {
       color: var(--color-text); line-height: 1.6;
     }
+/* EXPERTISE */
+#expertise {
+  padding: 2rem 1rem;
+}
+#expertise h2 {
+  text-align: center;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+.practices {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.practice-card {
+  background: var(--color-bg-light);
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+.practice-card:hover {
+  transform: scale(1.02);
+}
+.practice-card:nth-child(even) {
+  background: var(--color-bg-dark);
+}
+.practice-card h3 {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: 1rem;
+}
+.practice-card a {
+  margin-top: auto;
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  text-decoration: none;
+}
+/* מובייל - גלילה צדדית */
+@media (max-width: 768px) {
+  .practices {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
 
-    /* EXPERTISE */
-    #expertise {
-      padding: 2rem 1rem;
+  .practice-card {
+    flex: 0 0 auto;
+    min-width: 200px;
+    height: auto;
+    scroll-snap-align: start;
+  }
+
+  /* החיווי */
+  .scroll-indicator {
+    position: relative;
+    text-align: right;
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-top: 0.5rem;
+    opacity: 0.6;
+    user-select: none;
+    animation: slideArrow 1.5s infinite alternate ease-in-out;
+    max-width: 200px;
+    margin-left: auto;
+  }
+
+  /* אנימציה קלה של החץ */
+  @keyframes slideArrow {
+    0% {
+      opacity: 0.6;
+      transform: translateX(0);
     }
-    #expertise h2 {
-      text-align: center; color: var(--color-primary); margin-bottom: 1.5rem;
+    100% {
+      opacity: 1;
+      transform: translateX(-8px);
     }
-    .practices {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 1rem; max-width: 1000px; margin: 0 auto;
-    }
-    .practice-card {
-      background: var(--color-bg-light); padding: 1rem; border-radius: 8px;
-      display: flex; flex-direction: column; justify-content: center;
-      height: 100px; text-align: center;
-    }
-    .practice-card:nth-child(even) { background: var(--color-bg-dark); }
-    .practice-card h3 {
-      margin: 0; color: var(--color-primary); font-size: 1rem;
-    }
-    .practice-card a {
-      margin-top: auto; font-size: 0.85rem; color: var(--color-accent);
-      text-decoration: none;
-    }
-    @media (max-width: 768px) {
-      .practice-card { height: auto; }
-    }
+  }
+}
+
+/* במחשבים רגילים - להסתיר את החיווי */
+@media (min-width: 769px) {
+  .scroll-indicator {
+    display: none;
+  }
+}
+
+
 
     /* TESTIMONIALS */
     #testimonials {
@@ -285,7 +416,7 @@
 <section class="hero" id="about">
   <div class="container">
     <div class="image">
-      <img src="assets/images/hero.jpg" alt="עו\"d יניב אברהמוב">
+      <img src="assets/images/hero.jpg" alt="עו״ד יניב אברהמוב">
     </div>
     <div class="text-with-logo">
       <div class="text">
@@ -321,6 +452,8 @@
       <div class="practice-card"><h3>תאונות אופניים</h3><a href="#">המשך קריאה</a></div>
       <div class="practice-card"><h3>תאונות תלמידים</h3><a href="#">המשך קריאה</a></div>
     </div>
+      <div class="scroll-indicator">⬅️ החלק לצדדים</div>
+
   </section>
 
   <section id="testimonials">
@@ -331,8 +464,8 @@
         <p class="author">– א.ג.</p>
       </div>
       <div class="testimonial">
-        <p>"הטיפול המסור והמקצועי של יניב גרם לי להרגיש שהעניין שלי באמת חשוב. ממליץ בחום!"</p>
-        <p class="author">– מ.ק.</p>
+        <p>"פניתי ליניב בעקבות תביעה בתחום הנזיקין. הוא היה זמין, ברור והסביר את התהליך בצורה עניינית. קיבלתי ליווי מקצועי, והתוצאה הייתה מעולה. ממליץ עליו למי שמחפש ייצוג רציני ואחראי."</p>
+        <p class="author">– ט.ב</p>
       </div>
     </div>
     <div class="testimonial-nav">
@@ -387,8 +520,22 @@
       testimonials[current].classList.add('active');
     });
   </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const scrollContainer = document.querySelector('.practices');
+      const indicator = document.querySelector('.scroll-indicator');
 
-
+      if(scrollContainer && indicator) {
+        scrollContainer.addEventListener('scroll', () => {
+          if(scrollContainer.scrollLeft > 10) {
+            indicator.style.opacity = '0';
+          } else {
+            indicator.style.opacity = '0.6';
+          }
+        });
+      }
+    });
+  </script>
 
 </body>
 </html>
