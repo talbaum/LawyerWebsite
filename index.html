@@ -15,36 +15,55 @@
       --color-bg-dark: #e0ebf5;
     }
     * { box-sizing: border-box; }
-    body { margin: 0; padding: 0; font-family: Arial, sans-serif; color: var(--color-text); background: var(--color-secondary); line-height: 1.5; direction: rtl; }
+    /* Import Google Font */
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+    body { 
+      margin: 0; padding: 0; font-family: 'Rubik', Arial, sans-serif; color: var(--color-text); background: var(--color-secondary); line-height: 1.5; direction: rtl; }
     a { color: var(--color-accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* NAVBAR */
+        /* NAVBAR */
     header.navbar {
       display: flex; justify-content: space-between; align-items: center;
       padding: 1rem; background: var(--color-secondary);
       position: sticky; top: 0; z-index: 1000;
       border-bottom: 1px solid #e9ecef;
     }
-    header .logo img { max-height: 50px; }
-    .menu-toggle { display: none; font-size: 1.8rem; cursor: pointer; }
-    nav { display: flex; gap: 1rem; }
-    nav a { padding: 0.5rem 0.75rem; border-radius: 4px; color: var(--color-text); }
-    nav a:hover, nav a.active { background: var(--color-accent); color: #fff; }
-    @media (max-width: 768px) {
-      .menu-toggle { display: block; }
-      nav { display: none; flex-direction: column; position: absolute; top: 100%; right: 0; background: #fff; width: 100%; }
-      #menu-checkbox:checked + nav { display: flex; }
+    header .logo img { max-height: 100px; }
+    nav {
+      display: flex; gap: 1rem;
     }
+    nav a {
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      color: var(--color-text);
+    }
+    nav a:hover, nav a.active {
+      background: var(--color-accent);
+      color: #fff;
+    }
+
+
 
     /* HERO */
     .hero {
       display: flex; flex-direction: column; align-items: center; text-align: center;
       padding: 2rem 1rem; background: var(--color-bg-light);
     }
-    .hero .container {
+   /* .hero .container {
       display: flex; flex-direction: column; align-items: center; gap: 4rem; max-width: 1000px; width: 100%;
-    }
+    }*/
+.hero .container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2rem;
+  justify-content: space-between; /* מפזר בין שמאל וימין */
+  max-width: 2000px;
+  margin: 0 auto; /* מרכז ומיישר לשני הצדדים */
+}
+
     .hero .image img {
       width: 100%; max-width: 500px; height: auto;
       border: 2px solid var(--color-primary); border-radius: 8px;
@@ -54,6 +73,9 @@
     }
     .hero .text p {
       margin: 0.5rem 0;
+      font-family: 'Rubik', Arial, sans-serif; /* תואם לכותרת */
+  font-size: 1.125rem;  /* למשל 1rem או 1.25rem */
+  font-weight: 400;     /* 400 רגיל, 500 מעט מודגש */
     }
     .hero .text .btn-primary {
       padding: 0.75rem 1.5rem; background: var(--color-primary); color: #fff; border-radius: 6px;
@@ -69,6 +91,45 @@
       text-align: right;
       margin-top: 2rem;
     }
+
+.text-with-logo {
+  display: flex;
+  flex-direction: row; /* התמונה משמאל לטקסט */
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-right: 4.5rem;
+  margin-top: 4.5rem;
+  flex: 1;
+}
+
+.text-with-logo .text {
+  flex: 2;
+  max-width: 500px;
+  text-align: right;
+}
+
+    .text-with-logo .logo-side img {
+      width: 300px;
+      height: 200px;
+      border-radius: 8px;
+      border: 1px solid var(--color-primary);
+      margin-top: 4rem;
+      
+    }
+
+@media (max-width: 768px) {
+  .hero .container {
+    flex-direction: column;
+  }
+  .text-with-logo {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+  }
+  .text-with-logo .text {
+    max-width: 100%;
+  }
+}
 
     /* CARD */
     #card-section {
@@ -200,47 +261,53 @@
     }
     .footer-social a { margin: 0 0.5rem; }
     .footer-social img { width: 40px; height: 40px; }
+.footer-img {
+  width: 100%;
+  max-width: 400px;  /* הגבלה על הרוחב המקסימלי */
+  max-height: 250px; /* גובה מקסימלי כמו כרטיס ביקור */
+  height: auto;
+
+  margin: 1rem auto 0;
+}
+
   </style>
 </head>
 <body>
+<header class="navbar">
+  <div class="logo"><img src="assets/images/logo.jpeg" alt="לוגו"></div>
+  <nav>
+    <a href="#about" class="active">ראשי</a>
+    <a href="#expertise">מידע מקצועי</a>
+    <a href="#testimonials">המלצות</a>
+    <a href="#contact-info">צור קשר</a>
+  </nav>
+</header>
 
-  <header class="navbar">
-    <div class="logo"><img src="assets/images/logo.jpeg" alt="לוגו"></div>
-    <label for="menu-checkbox" class="menu-toggle">☰</label>
-    <input type="checkbox" id="menu-checkbox" hidden>
-    <nav>
-      <a href="#about" class="active">ראשי</a>
-      <a href="#expertise">מידע מקצועי</a>
-      <a href="#testimonials">המלצות</a>
-      <a href="#contact-info">צור קשר</a>
-    </nav>
-  </header>
-
+  
 <section class="hero" id="about">
-  <div class="container">
-    <div class="image">
-      <img src="assets/images/hero.jpg" alt="עו"ד יניב אברהמוב">
-    </div>
+<div class="container">
+  <div class="image">
+    <img src="assets/images/hero.jpg" alt="עו\"ד יניב אברהמוב">
+  </div>
+  <div class="text-with-logo">
     <div class="text">
-      <h2 style="text-align: right; margin-bottom: 1.5rem;">משרד עורכי דין יניב אברהמוב</h2>
-      <p style="text-align: right; margin-bottom: 1.5rem;">
-        משרדנו עוסק בתחום נזקי הגוף, לרבות תאונות דרכים, תאונות עבודה ותאונות שאירעו במרחב הציבורי.<br>
-        כמו כן, עוסק המשרד בייצוג מול המוסד לביטוח לאומי – לרבות פגיעות עבודה, נכות כללית, סיעוד וניידות.<br>
-        הטיפול המשפטי ניתן לכל אורך ההליך – משלב הייעוץ הראשוני ועד לקבלת הפיצוי.<br>
-        המשרד נותן שירות בשפה העברית, הרוסית והאנגלית.<br>
-        נשמח לעמוד לרשותכם.<br>
-        פנו אלינו לקבלת ייעוץ אישי ללא התחייבות.
+      <h2 style="margin-bottom: 1.5rem;">משרד עורכי דין יניב אברהמוב</h2>
+      <p style="margin-bottom: 1.5rem;">
+        משרדנו עוסק בתחום נזקי הגוף, לרבות תאונות דרכים, תאונות עבודה ותאונות שאירעו במרחב הציבורי.
+        כמו כן, עוסק המשרד בייצוג מול המוסד לביטוח לאומי - לרבות פגיעות עבודה, נכות כללית, סיעוד וניידות.
+        הטיפול המשפטי ניתן לכל אורך ההליך - משלב הייעוץ הראשוני ועד לקבלת הפיצוי.
+        המשרד נותן שירות בשפה העברית, הרוסית והאנגלית.<br><br>
+        פנו אלינו לקבלת ייעוץ ראשוני ללא התחייבות.
       </p>
       <div class="btn-wrapper">
-        <a href="https://wa.me/0543455432" class="btn-primary">צור קשר בוואטסאפ</a>
+        <a href="https://wa.me/0543455432" class="btn-primary">צרו קשר בWhatsApp</a>
       </div>
     </div>
+
   </div>
+</div>
 </section>
 
-  <section id="card-section">
-    <img src="assets/images/card.jpeg" alt="כרטיס ביקור מלבני">
-  </section>
 
 
   <section id="expertise">
@@ -284,17 +351,17 @@
     <div class="contact-item"><h3>אימייל</h3><p><a href="mailto:yaniv.a.adv@gmail.com">yaniv.a.adv@gmail.com</a></p></div>
     <div class="contact-item"><h3>שעות פעילות</h3><p>א'-ה' 9:00–18:00</p></div>
     <div class="map-wrapper">
-      <iframe src="https://www.google.com/maps?hl=he&q=%D7%94%D7%94%D7%92%D7%A0%D7%94%20130,%20%D7%90%D7%95%D7%A8%20%D7%99%D7%94%D7%95%D7%93%D7%94&output=embed" loading="lazy"></iframe>
+      <iframe src="https://www.google.com/maps?hl=he&q=האחים+בז׳רנו+7,+רמת+גן&output=embed" loading="lazy"></iframe>
     </div>
   </section>
 
 <section id="like">
-  <h2>עשו לנו לייק</h2>
+  <h2>עקבו אחרינו ברשתות</h2>
   <div class="like-card">
     <img src="assets/images/fb-page.jpg" alt="כיסוי פייסבוק" class="cover">
     <div class="overlay">
       <h3>עורך דין יניב אברהמוב</h3>
-      <button class="follow" onclick="window.open('https://www.facebook.com/people/Yanivavrahamov/61577000080529/', '_blank')">עקוב אחרי הדף</button>
+      <button class="follow" onclick="window.open('https://www.facebook.com/share/1HnqcV3Q79/?mibextid=wwXIfr', '_blank')">עקוב אחרי הדף</button>
     </div>
   </div>
 </section>
@@ -303,7 +370,7 @@
     <div class="footer-social">
       <a href="https://wa.me/0543455432" target="_blank"><img src="assets/icons/whatsapp.svg" alt="WhatsApp"></a>
       <a href="https://www.linkedin.com/in/yaniv-avrahamov-53b76717a" target="_blank"><img src="assets/icons/linkedin.svg" alt="LinkedIn"></a>
-      <a href="https://www.facebook.com/people/Yanivavrahamov/61577000080529/" target="_blank"><img src="assets/icons/facebook.svg" alt="Facebook"></a>
+      <a href="https://www.facebook.com/share/1HnqcV3Q79/?mibextid=wwXIfr" target="_blank"><img src="assets/icons/facebook.svg" alt="Facebook"></a>
       <a href="https://www.instagram.com/yaniv_avrahamov_adv" target="_blank"><img src="assets/icons/instagram.svg" alt="Instagram"></a>
     </div>
     <p>© 2025 עו"ד יניב אברהמוב. כל הזכויות שמורות.</p>
@@ -323,6 +390,8 @@
       testimonials[current].classList.add('active');
     });
   </script>
+
+
 
 </body>
 </html>
