@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://yourdomain.com/</loc>
+    <loc>https://avrahamov-law.co.il/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://yourdomain.com/#about</loc>
+    <loc>https://avrahamov-law.co.il/#about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://yourdomain.com/#services</loc>
+    <loc>https://avrahamov-law.co.il/#services</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://yourdomain.com/#process</loc>
+    <loc>https://avrahamov-law.co.il/#process</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://yourdomain.com/#testimonials</loc>
+    <loc>https://avrahamov-law.co.il/#testimonials</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://yourdomain.com/#blog</loc>
+    <loc>https://avrahamov-law.co.il/#blog</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://yourdomain.com/#contact</loc>
+    <loc>https://avrahamov-law.co.il/#contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
