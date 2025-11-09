@@ -521,6 +521,19 @@ h1, .section-title {
   left: 10px;
 }
 
+.carousel img {
+  max-height: 400px; 
+  width: auto;
+  object-fit: cover;
+}
+
+/* לשמור על גודל יפה במובייל */
+@media (max-width: 768px) {
+  .carousel img {
+    max-height: 300px;
+  }
+}
+
 @keyframes fade {
   from {opacity: 0.5;}
   to {opacity: 1;}
@@ -603,9 +616,6 @@ h1, .section-title {
     </div>
     <div class="carousel-slide">
       <img src="assets/images/success3.jpeg" alt="הישג בבית משפט">
-    </div>
-    <div class="carousel-slide">
-      <img src="assets/images/success4.jpeg" alt="מסמך ניצחון משפטי">
     </div>
 
     <button class="carousel-btn prev">⟨</button>
